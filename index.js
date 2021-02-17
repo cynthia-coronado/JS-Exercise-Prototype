@@ -81,6 +81,10 @@ function Car(model, milesPerGallon) {
   this.tank = 0;
   this.odometer = 0;
 }
+// Not part of assignment 
+Car.prototype.carInfoString = function () {
+  return `${this.model}, ${this.milesPerGallon}`;
+}
 Car.prototype.fill = function (gallons) {
   this.tank += gallons;
 };
@@ -92,13 +96,17 @@ Car.prototype.drive = function (distance) {
   } else {
     this.odometer += this.milesPerGallon * this.tank;
     this.tank = 0;
-    return `I ran out of fuel at ${this.odometer} miles`;
+    return `I ran out of fuel at ${this.odometer} miles!`;
   }
 };
+// const Mercedes = new Car('AMG GT', 8);
+// Mercedes.fill(3);
+// console.log(Mercedes.tank);
+// console.log(Mercedes.carInfoString());
+// console.log(Mercedes.drive(30));
+// console.log(Mercedes.odometer);
+// console.log(Mercedes.tank);
 
-const Mercedes = new Car('AMG GT', 8);
-Mercedes.fill(20);
-console.log(Mercedes.tank);
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
