@@ -86,9 +86,9 @@ Car.prototype.fill = function (gallons) {
 };
 Car.prototype.drive = function (distance) {
   const gasoline = this.tank - distance / this.milesPerGallon;
-  if (fuel > 0) {
+  if (gasoline > 0) {
     this.odometer += distance;
-    this.tank = fuel;
+    this.tank = gasoline;
   } else {
     this.odometer += this.milesPerGallon * this.tank;
     this.tank = 0;
@@ -99,7 +99,6 @@ Car.prototype.drive = function (distance) {
 const Mercedes = new Car('AMG GT', 8);
 Mercedes.fill(20);
 console.log(Mercedes.tank);
-
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
@@ -133,10 +132,10 @@ Baby.prototype.poop = function () {
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window Binding - This means a global scope and no declared onject. 'This' refers to the window object in the browser.
+  2. Implicit Binding - This means when an object method is called 'this refers to what is left of the '.' Most common principle.
+  3. New Binding - 'New' keyword creates a new object from a constructor function and 'This' points to it. 
+  4. Explicit Binding - Uses the keywords 'Call' and 'Apply'. All refer to a specific object that is chosen. 
 */
 
 
